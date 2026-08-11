@@ -25,7 +25,7 @@
                 --도장-세로위치: 75%;
                 --초대장-빠져나옴: -50%;
 
-                /* --- 💡 팝업창(내부 페이지) 설정 (원본 비율 및 크기 복구) --- */
+                /* --- 💡 팝업창(내부 페이지) 설정 --- */
                 --팝업-가로크기: 900px; 
                 --팝업-최대너비: 94vw; 
                 
@@ -33,7 +33,7 @@
                 --카피라이트-글씨크기: 0.5rem;
                 --카피라이트-글씨색상: #e54343;
 
-                /* 👇 타이틀 이미지 크기 (원본 크기로 복구) 👇 */
+                /* 👇 타이틀 이미지 크기 👇 */
                 --타이틀-이미지-크기: 90%; 
             }
 
@@ -43,7 +43,7 @@
                 font-family: 'Noto Serif KR', serif !important;
             }
 
-            /* 다이아몬드 대신 실링 이미지 교체 (실링 삐져나감 방지 및 정위치) */
+            /* 다이아몬드 대신 실링 이미지 교체 */
             #header .logo { 
                 border: none !important; 
                 background-image: url('images/봉투_실링.png'); 
@@ -68,27 +68,32 @@
             #header h1, #header p, #header nav ul li a { color: #e54343 !important; }
 
             /* ====================================================================== */
-            /* 팝업창 크기 및 배경 이미지 원래 비율로 복구 */
+            /* 팝업창 크기 및 배경 이미지 설정 */
             /* ====================================================================== */
             #main > article {
                 background-color: transparent !important;
                 background-image: url('images/초대장배경.png') !important;
+
                 background-size: 100% 100% !important;
                 background-position: center center !important;
                 background-repeat: no-repeat !important;
 
                 width: var(--팝업-가로크기) !important;
                 max-width: var(--팝업-최대너비) !important;
+
+                /* 원본 초대장 비율에 맞춤: 약 1.067 : 1 */
                 aspect-ratio: 1.067 / 1 !important;
+
                 height: min(88.1vw, 843px) !important;
                 min-height: 0 !important;
 
                 overflow: visible !important;
+
                 padding: 6rem 6rem 6rem 6rem !important;
                 box-sizing: border-box !important;
             }
 
-            /* 모바일 화면 여백 설정 복구 */
+            /* 모바일 화면 여백 설정 */
             @media screen and (max-width: 736px) {
                 #main > article {
                     padding: 4rem 3rem 4rem 3rem !important;
@@ -100,10 +105,11 @@
                 }
             }
 
+            
             #main > article h2.major {
                 border-bottom: none !important; 
                 text-align: center !important; 
-                margin-bottom: 1.5rem;
+                margin-bottom: 2rem;
                 width: 100% !important; 
                 padding: 0 !important;
             }
@@ -117,16 +123,21 @@
             }
 
             /* ====================================================================== */
-            /* 💡 유튜브 영상 영역 (크기 적당하게 원복 및 박스 제한) */
+            /* 💡 CONTACT 페이지만 단색 배경으로 변경 (초대장 이미지 제거) */
+            /* ====================================================================== */
+            #main > article#contact {
+                background-image: none !important;
+                background-color: #000000 !important; /* 검정색 단색 배경 */
+            }
+
+            /* ====================================================================== */
+            /* 유튜브 비디오 영역 및 푸터 설정 */
             /* ====================================================================== */
             .video-container {
                 position: relative;
                 width: 100%;
-                padding-bottom: 56.25%; /* 16:9 비율 유지 */
-                margin-bottom: 1.5rem;
-                background: #000;
-                border-radius: 4px;
-                overflow: hidden;
+                padding-bottom: 56.25%; /* 16:9 비율 */
+                margin: 0 0 2rem 0 !important;
             }
             .video-container iframe {
                 position: absolute;
@@ -134,50 +145,36 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
+                border-radius: 4px;
                 border: 0;
             }
 
-            /* ====================================================================== */
-            /* 💡 하단 글씨 박스 (좌우로 너무 넓어지지 않게 꽉 잡아줌) */
-            /* ====================================================================== */
             #main > article p {
-                background-color: rgba(0, 0, 0, 0.7) !important; /* 불투명 박스 */
+                background-color: rgba(0, 0, 0, 0.7) !important;
                 padding: 1rem 1.5rem !important;
                 border-radius: 6px !important;
                 color: #ffffff !important;
                 box-sizing: border-box !important;
-                max-height: 16vh; /* 너무 길어져서 넘치는 것 방지 */
+                max-height: 16vh;
                 overflow-y: auto;
                 font-size: 0.85rem;
             }
 
-            /* 💡 특정 강조 문구 스타일 */
             #main > article p strong.highlight-title {
                 font-size: calc(1rem + 2pt) !important;
                 font-weight: 700 !important;
             }
 
-            /* ====================================================================== */
-            /* 💡 CONTACT 페이지만 단색 배경으로 변경 */
-            /* ====================================================================== */
-            #main > article#contact {
-                background-image: none !important;
-                background-color: #000000 !important; /* 검정색 단색 배경 */
-            }
             #main > article#contact p {
                 background-color: transparent !important;
                 padding: 0 !important;
                 max-height: none !important;
             }
 
-            /* ====================================================================== */
-            /* 비디오 영역 및 푸터 */
-            /* ====================================================================== */
-            .image.main { margin: 0 0 2rem 0 !important; padding: 0 !important; }
             #footer .copyright { color: var(--카피라이트-글씨색상) !important; font-size: var(--카피라이트-글씨크기) !important; }
             #footer .copyright a { color: var(--카피라이트-글씨색상) !important; }
 
-            /* 초대장 애니메이션 (봉투 및 실링 위치 오류 완벽 수정) */
+            /* 초대장 애니메이션 */
             #envelope-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #321111; z-index: 99999; display: flex; justify-content: center; align-items: center; transition: opacity 1.5s ease, visibility 1.5s ease; }
             #envelope-overlay.hidden { opacity: 0; visibility: hidden; pointer-events: none;}
             .envelope-container { position: relative; width: 85vw; max-width: 600px; cursor: pointer; perspective: 2000px; }
@@ -234,7 +231,7 @@
                 <article id="trailer">
                     <h2 class="major"><img src="images/트레일러.png" alt="Trailer" /></h2>
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/ISFYp_wNXnA" title="Trailer Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/ISFYp_wNXnA" title="Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <p></p>
                 </article>
@@ -242,7 +239,7 @@
                 <article id="worldview">
                     <h2 class="major"><img src="images/월드뷰.png" alt="Worldview" /></h2>
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/ISFYp_wNXnA" title="Worldview Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/ISFYp_wNXnA" title="Worldview" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <p><strong class="highlight-title">무경(無境): 경계가 지워진 공간</strong><br /><br />
 강렬한 욕망, 지독한 죄책감, 혹은 끔찍한 진실과 연관된 자들에게만 전송되는 초대장입니다. 평범한 현대인이었던 플레이어 역시 이 초대장을 열어보는 순간, 인과율의 늪에 빠져 1930년대 경성의 호텔로 강제 소환됩니다.
@@ -253,7 +250,7 @@
                 <article id="character">
                     <h2 class="major"><img src="images/캐릭터.png" alt="Character" /></h2>
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/ISFYp_wNXnA" title="Character Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/ISFYp_wNXnA" title="Character" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <p></p>
                 </article>
