@@ -43,15 +43,15 @@
             #header nav:before, #header nav:after { display: none !important; }
             #header h1, #header p, #header nav ul li a { color: #e54343 !important; }
 
-            /* 템플릿 원본 구조를 유지하는 팝업창 배경 설정 */
+            /* 템플릿 원본 패딩/크기 복구 (여백 제거) */
             #main > article {
                 background-image: url('images/초대장배경.png') !important;
                 background-size: 100% 100% !important;
                 background-position: center !important;
                 background-repeat: no-repeat !important;
-                width: 900px !important;
+                width: 75rem !important;
                 max-width: 90vw !important;
-                padding: 4rem 4rem !important;
+                padding: 4rem 4rem 3rem 4rem !important;
                 box-sizing: border-box !important;
             }
 
@@ -59,12 +59,12 @@
             #main > article h2.major {
                 border-bottom: none !important; 
                 text-align: center !important; 
-                margin-bottom: 1.5rem;
+                margin-bottom: 1.5rem !important;
             }
             #main > article h2.major img {
                 display: block;
                 margin: 0 auto !important; 
-                width: 80% !important; 
+                width: 70% !important; 
                 max-width: 100% !important; 
                 height: auto;
             }
@@ -88,10 +88,10 @@
             /* 텍스트 뒤 불투명한 박스 및 폰트 설정 */
             #main > article p {
                 background-color: rgba(0, 0, 0, 0.75) !important;
-                padding: 1.5rem !important;
+                padding: 1.2rem 1.5rem !important;
                 border-radius: 6px !important;
                 color: #ffffff !important;
-                font-size: 0.95rem;
+                font-size: 0.9rem;
                 line-height: 1.6;
             }
 
