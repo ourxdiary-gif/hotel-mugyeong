@@ -13,30 +13,6 @@
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
         
         <style>
-            /* 
-            ======================================================================
-            [👇 초보자를 위한 설정창 👇]
-            ======================================================================
-            */
-            :root {
-                /* --- 봉투 애니메이션 설정 --- */
-                --도장-크기: 21%;
-                --도장-가로위치: 50%;
-                --도장-세로위치: 75%;
-                --초대장-빠져나옴: -50%;
-
-                /* --- 💡 팝업창(내부 페이지) 설정 --- */
-                --팝업-가로크기: 1250px; 
-                --팝업-최대너비: 95vw; 
-                
-                /* --- 💡 카피라이트 설정 --- */
-                --카피라이트-글씨크기: 0.5rem;
-                --카피라이트-글씨색상: #e54343;
-
-                /* 👇 타이틀 이미지 크기 👇 */
-                --타이틀-이미지-크기: 80%; 
-            }
-
             @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;700&display=swap');
             
             body, input, select, textarea, h1, h2, h3, h4, h5, h6, p, a {
@@ -67,141 +43,78 @@
             #header nav:before, #header nav:after { display: none !important; }
             #header h1, #header p, #header nav ul li a { color: #e54343 !important; }
 
-            /* ====================================================================== */
-            /* 팝업창 크기 및 배경 이미지 비율 유지 설정 (PC 버전) */
-            /* ====================================================================== */
+            /* 템플릿 원본 구조를 유지하는 팝업창 배경 설정 */
             #main > article {
-                background: transparent !important;
-                width: var(--팝업-가로크기) !important;
-                max-width: var(--팝업-최대너비) !important;
-                aspect-ratio: 0.75 / 1 !important; 
-                position: relative !important;
-                overflow: hidden !important; 
-                padding: 4rem 5rem !important;
+                background-image: url('images/초대장배경.png') !important;
+                background-size: 100% 100% !important;
+                background-position: center !important;
+                background-repeat: no-repeat !important;
+                width: 900px !important;
+                max-width: 90vw !important;
+                padding: 4rem 4rem !important;
                 box-sizing: border-box !important;
-                display: flex !important;
-                flex-direction: column !important;
-                justify-content: flex-start !important;
-                align-items: center !important;
             }
 
-            /* 배경 이미지를 팝업 내부에 완벽하게 맞춤 */
-            .article-bg {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: fill; 
-                z-index: -1;
-                pointer-events: none;
-            }
-
-            /* 내부 컨텐츠가 배경 이미지 위에 정확히 위치하도록 조정 */
-            #main > article > *:not(.article-bg) {
-                position: relative;
-                z-index: 1;
-                width: 100%;
-            }
-
+            /* 타이틀 이미지 중앙 정렬 */
             #main > article h2.major {
                 border-bottom: none !important; 
                 text-align: center !important; 
-                margin-bottom: 1rem !important;
-                width: 100% !important; 
-                padding: 0 !important;
+                margin-bottom: 1.5rem;
             }
-
             #main > article h2.major img {
                 display: block;
                 margin: 0 auto !important; 
-                width: var(--타이틀-이미지-크기) !important; 
+                width: 80% !important; 
                 max-width: 100% !important; 
                 height: auto;
             }
 
-            /* ====================================================================== */
-            /* 💡 유튜브 영상 반응형 컨테이너 설정 */
-            /* ====================================================================== */
-            .video-wrapper {
+            /* 유튜브 영상 반응형 박스 */
+            .video-container {
                 position: relative;
                 width: 100%;
-                padding-bottom: 56.25%; /* 16:9 비율 유지 */
-                margin-bottom: 1rem;
-                background: #000;
-                border-radius: 4px;
-                overflow: hidden;
+                padding-bottom: 56.25%; /* 16:9 비율 */
+                margin-bottom: 1.5rem;
             }
-            .video-wrapper iframe {
+            .video-container iframe {
                 position: absolute;
                 top: 0;
                 left: 0;
                 width: 100%;
                 height: 100%;
-                border: 0;
+                border-radius: 4px;
             }
 
-            /* ====================================================================== */
-            /* 💡 모바일 화면 맞춤 설정 */
-            /* ====================================================================== */
-            @media screen and (max-width: 736px) {
-                #main > article {
-                    padding: 2rem 1.5rem !important; 
-                    aspect-ratio: 0.58 / 1 !important; 
-                }
-                
-                #main > article p {
-                    padding: 0.6rem 0.8rem !important;  
-                    font-size: 0.7rem !important;    
-                    max-height: 22vh !important;      
-                    overflow-y: auto !important;      
-                    margin-top: 0.5rem !important;
-                }
-            }
-
-            /* ====================================================================== */
-            /* 💡 텍스트(p 태그) 뒤 불투명한 박스 추가 설정 */
-            /* ====================================================================== */
+            /* 텍스트 뒤 불투명한 박스 및 폰트 설정 */
             #main > article p {
-                background-color: rgba(0, 0, 0, 0.75) !important; 
-                padding: 1.2rem 1.5rem !important;
+                background-color: rgba(0, 0, 0, 0.75) !important;
+                padding: 1.5rem !important;
                 border-radius: 6px !important;
                 color: #ffffff !important;
-                margin-top: 1rem !important;
-                box-sizing: border-box !important;
-                overflow-y: auto; 
+                font-size: 0.95rem;
+                line-height: 1.6;
             }
 
-            /* 💡 특정 강조 문구 스타일 */
             #main > article p strong.highlight-title {
                 font-size: calc(1rem + 2pt) !important;
                 font-weight: 700 !important;
             }
 
-            /* ====================================================================== */
-            /* 💡 CONTACT 페이지만 단색 배경으로 변경 */
-            /* ====================================================================== */
+            /* CONTACT 페이지 설정 */
             #main > article#contact {
-                background-color: #000000 !important; 
-                aspect-ratio: auto !important;
-                overflow: visible !important;
-            }
-            #main > article#contact .article-bg {
-                display: none; 
+                background-image: none !important;
+                background-color: #000000 !important;
             }
             #main > article#contact p {
-                background-color: transparent !important; 
+                background-color: transparent !important;
                 padding: 0 !important;
-                max-height: none !important;
             }
 
-            /* ====================================================================== */
-            /* 푸터 */
-            /* ====================================================================== */
-            #footer .copyright { color: var(--카피라이트-글씨색상) !important; font-size: var(--카피라이트-글씨크기) !important; }
-            #footer .copyright a { color: var(--카피라이트-글씨색상) !important; }
+            /* 푸터 및 저작권 */
+            #footer .copyright { color: #e54343 !important; font-size: 0.5rem !important; }
+            #footer .copyright a { color: #e54343 !important; }
 
-            /* 초대장 애니메이션 */
+            /* 편지 봉투 오버레이 애니메이션 */
             #envelope-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #321111; z-index: 99999; display: flex; justify-content: center; align-items: center; transition: opacity 1.5s ease, visibility 1.5s ease; }
             #envelope-overlay.hidden { opacity: 0; visibility: hidden; pointer-events: none;}
             .envelope-container { position: relative; width: 85vw; max-width: 600px; cursor: pointer; perspective: 2000px; }
@@ -212,10 +125,10 @@
             .env-flap-wrapper { position: absolute; top: 0; left: 0; width: 100%; z-index: 4; transform-origin: top center; transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; pointer-events: none; }
             .flap-front { position: relative; backface-visibility: hidden; }
             .flap-back { position: absolute; top: 0; left: 0; backface-visibility: hidden; transform: rotateX(180deg); }
-            .env-seal { position: absolute; top: var(--도장-세로위치); left: var(--도장-가로위치); transform: translate(-50%, -50%); width: var(--도장-크기) !important; z-index: 5; transition: opacity 0.5s ease, transform 0.5s ease; pointer-events: none; }
+            .env-seal { position: absolute; top: var(--도장-세로위치); left: var(--도장-가로위치); transform: translate(-50%, -50%); width: 21% !important; z-index: 5; transition: opacity 0.5s ease, transform 0.5s ease; pointer-events: none; }
             .envelope-container.open .env-flap-wrapper { transform: rotateX(180deg); }
             .envelope-container.open .env-seal { opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
-            .envelope-container.pull-out .env-letter { transform: translateY(var(--초대장-빠져나옴)); cursor: pointer;} 
+            .envelope-container.pull-out .env-letter { transform: translateY(-50%); cursor: pointer;} 
             .envelope-container.pull-out .env-flap-wrapper { z-index: 1; }
         </style>
     </head>
@@ -256,19 +169,17 @@
 
             <div id="main">
                 <article id="trailer">
-                    <img src="images/초대장배경.png" alt="" class="article-bg" />
                     <h2 class="major"><img src="images/트레일러.png" alt="Trailer" /></h2>
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/ISFYp_wNXnA" title="Trailer Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/ISFYp_wNXnA" title="Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <p></p>
                 </article>
 
                 <article id="worldview">
-                    <img src="images/초대장배경.png" alt="" class="article-bg" />
                     <h2 class="major"><img src="images/월드뷰.png" alt="Worldview" /></h2>
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/ISFYp_wNXnA" title="Worldview Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/ISFYp_wNXnA" title="Worldview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <p><strong class="highlight-title">무경(無境): 경계가 지워진 공간</strong><br /><br />
 강렬한 욕망, 지독한 죄책감, 혹은 끔찍한 진실과 연관된 자들에게만 전송되는 초대장입니다. 평범한 현대인이었던 플레이어 역시 이 초대장을 열어보는 순간, 인과율의 늪에 빠져 1930년대 경성의 호텔로 강제 소환됩니다.
@@ -277,16 +188,14 @@
                 </article>
 
                 <article id="character">
-                    <img src="images/초대장배경.png" alt="" class="article-bg" />
                     <h2 class="major"><img src="images/캐릭터.png" alt="Character" /></h2>
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/ISFYp_wNXnA" title="Character Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/ISFYp_wNXnA" title="Character" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <p></p>
                 </article>
 
                 <article id="contact">
-                    <img src="images/초대장배경.png" alt="" class="article-bg" />
                     <h2 class="major"><img src="images/콘택트.png" alt="Contact" /></h2>
                     <form method="post" action="#">
                         <div class="fields">
