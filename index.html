@@ -116,28 +116,28 @@
             }
 
             /* ====================================================================== */
-            /* 💡 모바일 화면 맞춤 설정 (글자 박스 스크롤 및 튀어나김 방지) */
+            /* 💡 모바일 화면 맞춤 설정 (강력한 글자 잘림 방지 및 크기 축소) */
             /* ====================================================================== */
             @media screen and (max-width: 736px) {
                 #main > article {
-                    padding: 2rem 1.5rem !important; 
-                    aspect-ratio: 0.65 / 1 !important; 
+                    padding: 1.5rem 1rem !important; 
+                    aspect-ratio: 0.62 / 1 !important; 
                 }
                 
                 #main > article p {
-                    padding: 0.8rem 1rem !important;  
-                    font-size: 0.72rem !important;    
-                    max-height: 22vh !important;      /* 모바일에서 박스 높이를 제한하여 절대 안 튀어나오게 설정 */
-                    overflow-y: auto !important;      /* 삐져나가는 글자는 박스 안에서 스크롤되도록 처리 */
-                    margin-top: 0.8rem !important;
+                    padding: 0.6rem 0.8rem !important;  
+                    font-size: 0.65rem !important;    /* 모바일 화면에서 글자가 잘리지 않도록 크기 축소 */
+                    max-height: 18vh !important;      /* 모바일 박스 높이 엄격 제한 */
+                    overflow-y: auto !important;      /* 삐져나가는 내용은 스크롤 처리 */
+                    margin-top: 0.5rem !important;
                 }
 
                 #main > article h2.major {
-                    margin-bottom: 0.5rem !important;
+                    margin-bottom: 0.3rem !important;
                 }
 
                 .image.main {
-                    margin: 0 0 0.8rem 0 !important;
+                    margin: 0 0 0.5rem 0 !important;
                 }
             }
 
@@ -254,10 +254,10 @@
                 </article>
 
                 <article id="worldview">
-                    <img src="images/초d장배경.png" alt="" class="article-bg" /> <!-- 오타 방지용 유지 -->
+                    <img src="images/초대장배경.png" alt="" class="article-bg" />
                     <h2 class="major"><img src="images/월드뷰.png" alt="Worldview" /></h2>
                     <span class="image main">
-                        <video src="images/호텔무경_세계관.mp4" controls playsinline preload="auto"></video>
+                        <video src="images/호텔무경_세계관.mp4" controls playsinline autoplay muted preload="auto"></video>
                     </span>
                     <p><strong class="highlight-title">무경(無境): 경계가 지워진 공간</strong><br /><br />
 강렬한 욕망, 지독한 죄책감, 혹은 끔찍한 진실과 연관된 자들에게만 전송되는 초대장입니다. 평범한 현대인이었던 플레이어 역시 이 초대장을 열어보는 순간, 인과율의 늪에 빠져 1930년대 경성의 호텔로 강제 소환됩니다.
