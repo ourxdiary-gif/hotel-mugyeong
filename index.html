@@ -1,343 +1,685 @@
 <!DOCTYPE HTML>
+
 <!--
+
     Dimension by HTML5 UP
+
     html5up.net | @ajlkn
+
     Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
 -->
+
 <html>
+
     <head>
+
         <title>호텔 무경</title>
+
         <meta charset="utf-8" />
+
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
         <link rel="stylesheet" href="assets/css/main.css" />
+
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
         
+
         <style>
+
             /* 
+
             ======================================================================
+
             [👇 초보자를 위한 설정창 👇]
+
             ======================================================================
+
             */
+
             :root {
+
                 /* --- 봉투 애니메이션 설정 --- */
+
                 --도장-크기: 21%;
+
                 --도장-가로위치: 50%;
+
                 --도장-세로위치: 75%;
+
                 --초대장-빠져나옴: -50%;
 
+
+
                 /* --- 💡 팝업창(내부 페이지) 설정 --- */
+
                 --팝업-가로크기: 900px; 
+
                 --팝업-최대너비: 94vw; 
+
                 
+
                 /* --- 💡 카피라이트 설정 --- */
+
                 --카피라이트-글씨크기: 0.5rem;
+
                 --카피라이트-글씨색상: #e54343;
 
+
+
                 /* 👇 타이틀 이미지 크기 (초대장 안으로 들어오게 축소) 👇 */
+
                 --타이틀-이미지-크기: 75%; 
+
             }
+
+
 
             @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;700&display=swap');
+
             
+
             body, input, select, textarea, h1, h2, h3, h4, h5, h6, p, a {
+
                 font-family: 'Noto Serif KR', serif !important;
+
             }
+
+
 
             /* 다이아몬드 대신 실링 이미지 교체 */
+
             #header .logo { 
+
                 border: none !important; 
+
                 background-image: url('images/봉투_실링.png'); 
+
                 background-size: contain;
+
                 background-position: center;
+
                 background-repeat: no-repeat;
+
                 width: 5.5rem; 
+
                 height: 5.5rem;
+
             }
+
             #header .logo .icon { display: none !important; }
 
+
+
             /* 선 색상 변경 */
+
             #header .content { border-color: #e54343 !important; }
+
             #header nav ul { border-color: #e54343 !important; }
+
             #header nav ul li { 
+
                 border-color: #e54343 !important; 
+
                 border-left: solid 1px #e54343 !important; 
+
             }
+
             #header nav ul li:first-child { border-left: none !important; }
+
             #header .content:before { background-color: #e54343 !important; }
+
             #header nav:before, #header nav:after { display: none !important; }
+
             #header h1, #header p, #header nav ul li a { color: #e54343 !important; }
 
+
+
             /* ====================================================================== */
+
             /* 팝업창 크기 및 안쪽 여백(padding)을 넓혀서 콘텐츠가 안으로 들어오게 수정 */
+
             /* ====================================================================== */
+
             #main > article {
+
                 background-color: transparent !important;
+
                 background-image: url('images/초대장배경.png') !important;
 
+
+
                 background-size: 100% 100% !important;
+
                 background-position: center center !important;
+
                 background-repeat: no-repeat !important;
 
+
+
                 width: var(--팝업-가로크기) !important;
+
                 max-width: var(--팝업-최대너비) !important;
 
+
+
                 aspect-ratio: 1.067 / 1 !important;
+
                 height: min(88.1vw, 843px) !important;
+
                 min-height: 0 !important;
+
+
 
                 overflow: visible !important;
 
+
+
                 /* 💡 안쪽 여백을 늘려서 타이틀/영상/글씨가 테두리 안으로 쏙 들어가게 함 */
+
                 padding: 7rem 7.5rem 6rem 7.5rem !important;
+
                 box-sizing: border-box !important;
+
             }
+
+
 
             /* 모바일 화면 여백 설정 */
+
             @media screen and (max-width: 736px) {
+
                 #main > article {
+
                     padding: 5rem 4rem 4rem 4rem !important;
+
                     width: 94vw !important;
+
                     max-width: 94vw !important;
+
                     height: 88.1vw !important;
+
                     aspect-ratio: 1.067 / 1 !important;
+
                     overflow: visible !important;
+
                 }
+
             }
+
+
 
             #main > article h2.major {
+
                 border-bottom: none !important; 
+
                 text-align: center !important; 
+
                 margin-bottom: 1.2rem !important;
+
                 width: 100% !important; 
+
                 padding: 0 !important;
+
             }
+
+
 
             #main > article h2.major img {
+
                 display: block;
+
                 margin: 0 auto !important; 
+
                 width: var(--타이틀-이미지-크기) !important; 
+
                 max-width: 100% !important; 
+
                 height: auto;
+
             }
 
+
+
             /* ====================================================================== */
+
             /* 💡 유튜브 비디오 영역 (크기를 살짝 줄여서 테두리 안으로 안 삐져나가게 함) */
-            /* ====================================================================== */
-            .video-container {
-                position: relative;
-                width: 100%;
-                padding-bottom: 53%; /* 16:9보다 살짝 컴팩트하게 조절 */
-                margin: 0 0 1rem 0 !important;
-            }
-            .video-container iframe {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                border-radius: 4px;
-                border: 0;
-            }
 
             /* ====================================================================== */
-            /* 💡 하단 텍스트 박스 (좌우 여백을 주어 테두리 안쪽에 딱 맞게 설정) */
-            /* ====================================================================== */
-            #main > article p {
-                background-color: rgba(0, 0, 0, 0.7) !important;
-                padding: 0.8rem 1.2rem !important;
-                border-radius: 6px !important;
-                color: #ffffff !important;
-                box-sizing: border-box !important;
-                max-height: 14vh; /* 높이를 알맞게 제한 */
-                overflow-y: auto;
-                font-size: 0.8rem;
-                margin: 0 !important;
+
+            .video-container {
+
+                position: relative;
+
+                width: 100%;
+
+                padding-bottom: 53%; /* 16:9보다 살짝 컴팩트하게 조절 */
+
+                margin: 0 0 1rem 0 !important;
+
             }
+
+            .video-container iframe {
+
+                position: absolute;
+
+                top: 0;
+
+                left: 0;
+
+                width: 100%;
+
+                height: 100%;
+
+                border-radius: 4px;
+
+                border: 0;
+
+            }
+
+
+
+            /* ====================================================================== */
+
+            /* 💡 하단 텍스트 박스 (좌우 여백을 주어 테두리 안쪽에 딱 맞게 설정) */
+
+            /* ====================================================================== */
+
+            #main > article p {
+
+                background-color: rgba(0, 0, 0, 0.7) !important;
+
+                padding: 0.8rem 1.2rem !important;
+
+                border-radius: 6px !important;
+
+                color: #ffffff !important;
+
+                box-sizing: border-box !important;
+
+                max-height: 14vh; /* 높이를 알맞게 제한 */
+
+                overflow-y: auto;
+
+                font-size: 0.8rem;
+
+                margin: 0 !important;
+
+            }
+
+
 
             #main > article p strong.highlight-title {
+
                 font-size: calc(0.9rem + 2pt) !important;
+
                 font-weight: 700 !important;
+
             }
 
+
+
             /* ====================================================================== */
+
             /* 💡 CONTACT 페이지만 단색 배경으로 변경 */
+
             /* ====================================================================== */
+
             #main > article#contact {
+
                 background-image: none !important;
+
                 background-color: #000000 !important; /* 검정색 단색 배경 */
+
             }
+
+
 
             #main > article#contact p {
+
                 background-color: transparent !important;
+
                 padding: 0 !important;
+
                 max-height: none !important;
+
             }
 
+
+
             #footer .copyright { color: var(--카피라이트-글씨색상) !important; font-size: var(--카피라이트-글씨크기) !important; }
+
             #footer .copyright a { color: var(--카피라이트-글씨색상) !important; }
 
+
+
             /* 초대장 애니메이션 */
+
             #envelope-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #321111; z-index: 99999; display: flex; justify-content: center; align-items: center; transition: opacity 1.5s ease, visibility 1.5s ease; }
+
             #envelope-overlay.hidden { opacity: 0; visibility: hidden; pointer-events: none;}
+
             .envelope-container { position: relative; width: 85vw; max-width: 600px; cursor: pointer; perspective: 2000px; }
+
             .envelope-container img { display: block; width: 100%; height: auto; }
+
             .env-base { position: relative; z-index: 1; }
+
             .env-letter { position: absolute; bottom: 2%; left: 5%; width: 90% !important; z-index: 2; transition: transform 1.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
+
             .env-front { position: absolute; bottom: 0; left: 0; z-index: 3; pointer-events: none;}
+
             .env-flap-wrapper { position: absolute; top: 0; left: 0; width: 100%; z-index: 4; transform-origin: top center; transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; pointer-events: none; }
+
             .flap-front { position: relative; backface-visibility: hidden; }
+
             .flap-back { position: absolute; top: 0; left: 0; backface-visibility: hidden; transform: rotateX(180deg); }
+
             .env-seal { position: absolute; top: var(--도장-세로위치); left: var(--도장-가로위치); transform: translate(-50%, -50%); width: var(--도장-크기) !important; z-index: 5; transition: opacity 0.5s ease, transform 0.5s ease; pointer-events: none; }
+
             .envelope-container.open .env-flap-wrapper { transform: rotateX(180deg); }
+
             .envelope-container.open .env-seal { opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
+
             .envelope-container.pull-out .env-letter { transform: translateY(var(--초대장-빠져나옴)); cursor: pointer;} 
+
             .envelope-container.pull-out .env-flap-wrapper { z-index: 1; }
+
         </style>
+
     </head>
+
     <body class="is-preload">
 
+
+
         <div id="envelope-overlay">
+
             <div class="envelope-container" id="envelope">
+
                 <img src="images/봉투_뒤.png" class="env-base" />
+
                 <img src="images/초대장.png" class="env-letter" id="clickable-letter"/>
+
                 <img src="images/봉투_앞.png" class="env-front" />
+
                 <div class="env-flap-wrapper" id="flap">
+
                     <img src="images/봉투_뚜껑앞면.png" class="flap-front" />
+
                     <img src="images/봉투_뚜껑뒷면.png" class="flap-back" />
+
                 </div>
+
                 <img src="images/봉투_실링.png" class="env-seal" />
+
             </div>
+
         </div>
+
+
 
         <div id="wrapper">
+
             <header id="header">
+
                 <div class="logo"></div>
+
                 <div class="content">
+
                     <div class="inner">
+
                         <h1>HOTEL MUGYEONG</h1>
+
                         <p>귀하를 호텔 무경의 특별한 손님으로 초대합니다<br />
+
                         이곳에는 시간의 경계도, 삶과 죽음의 경계도, 진실과 거짓의 경계도 존재하지 않습니다</p>
+
                     </div>
+
                 </div>
+
                 <nav>
+
                     <ul>
+
                         <li><a href="#trailer">TRAILER</a></li>
+
                         <li><a href="#worldview">WORLDVIEW</a></li>
+
                         <li><a href="#character">CHARACTER</a></li>
+
                         <li><a href="#contact">CONTACT</a></li>
+
                     </ul>
+
                 </nav>
+
             </header>
 
+
+
             <div id="main">
+
                 <article id="trailer">
+
                     <h2 class="major"><img src="images/트레일러.png" alt="Trailer" /></h2>
+
                     <div class="video-container">
+
                         <iframe src="https://www.youtube.com/embed/ISFYp_wNXnA" title="Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
                     </div>
+
                     <p></p>
+
                 </article>
+
+
 
                 <article id="worldview">
+
                     <h2 class="major"><img src="images/월드뷰.png" alt="Worldview" /></h2>
+
                     <div class="video-container">
+
                         <iframe src="https://www.youtube.com/embed/ISFYp_wNXnA" title="Worldview" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
                     </div>
+
                     <p><strong class="highlight-title">무경(無境): 경계가 지워진 공간</strong><br /><br />
+
 강렬한 욕망, 지독한 죄책감, 혹은 끔찍한 진실과 연관된 자들에게만 전송되는 초대장입니다. 평범한 현대인이었던 플레이어 역시 이 초대장을 열어보는 순간, 인과율의 늪에 빠져 1930년대 경성의 호텔로 강제 소환됩니다.
+
 <br /><br />
+
 호텔의 시간은 사건의 진상을 밝혀내기 전까지 일제강점기의 어느 어두운 밤에 멈춰 있습니다. 밤이 깊어질수록 살인과 실종이 반복되며, 진실을 찾지 못하고 죽은 희생자의 영혼은 영원히 속박됩니다.</p>
+
                 </article>
+
+
 
                 <article id="character">
+
                     <h2 class="major"><img src="images/캐릭터.png" alt="Character" /></h2>
+
                     <div class="video-container">
+
                         <iframe src="https://www.youtube.com/embed/ISFYp_wNXnA" title="Character" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
                     </div>
+
                     <p></p>
+
                 </article>
+
+
 
                 <article id="contact">
+
                     <h2 class="major"><img src="images/콘택트.png" alt="Contact" /></h2>
+
                     <form method="post" action="#">
+
                         <div class="fields">
+
                             <div class="field half">
+
                                 <label for="name">Name</label>
+
                                 <input type="text" name="name" id="name" />
+
                             </div>
+
                             <div class="field half">
+
                                 <label for="email">Email</label>
+
                                 <input type="text" name="email" id="email" />
+
                             </div>
+
                             <div class="field">
+
                                 <label for="message">Message</label>
+
                                 <textarea name="message" id="message" rows="4"></textarea>
+
                             </div>
+
                         </div>
+
                         <ul class="actions">
+
                             <li><input type="submit" value="Send Message" class="primary" /></li>
+
                             <li><input type="reset" value="Reset" /></li>
+
                         </ul>
+
                     </form>
+
                 </article>
+
             </div>
 
+
+
             <footer id="footer">
+
                 <p class="copyright">&copy; HOTEL MUGYEONG. All rights reserved.</p>
+
             </footer>
+
         </div>
+
+
 
         <div id="bg"></div>
 
+
+
         <script src="assets/js/jquery.min.js"></script>
+
         <script src="assets/js/browser.min.js"></script>
+
         <script src="assets/js/breakpoints.min.js"></script>
+
         <script src="assets/js/util.js"></script>
+
         <script src="assets/js/main.js"></script>
+
         
+
         <script>
+
             document.addEventListener('DOMContentLoaded', function() {
+
                 const envelope = document.getElementById('envelope');
+
                 const overlay = document.getElementById('envelope-overlay');
+
                 const clickableLetter = document.getElementById('clickable-letter');
+
                 
+
                 let isHoldingPreload = true;
 
+
+
                 const observer = new MutationObserver(function(mutations) {
+
                     mutations.forEach(function(mutation) {
+
                         if (isHoldingPreload && !document.body.classList.contains('is-preload')) {
+
                             document.body.classList.add('is-preload');
+
                         }
+
                     });
+
                 });
+
                 observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+
+
 
                 let isLetterClickable = false;
 
+
+
                 envelope.addEventListener('click', function(e) {
+
                     if(envelope.classList.contains('open')) return;
 
+
+
                     envelope.classList.add('open'); 
+
                     setTimeout(() => { envelope.classList.add('pull-out'); }, 800); 
+
                     
+
                     setTimeout(() => { isLetterClickable = true; }, 1500);
+
                 });
+
+
 
                 clickableLetter.addEventListener('click', function(e) {
+
                     if(!isLetterClickable) return;
+
                     e.stopPropagation(); 
 
+
+
                     overlay.classList.add('hidden'); 
+
                     
+
                     setTimeout(() => {
+
                         isHoldingPreload = false;
+
                         document.body.classList.remove('is-preload');
+
                     }, 300); 
+
                     
+
                     setTimeout(() => { overlay.style.display = 'none'; }, 1500);
+
                 });
+
             });
+
         </script>
 
+
+
     </body>
+
 </html>
