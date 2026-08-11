@@ -116,27 +116,28 @@
             }
 
             /* ====================================================================== */
-            /* 💡 모바일 화면 맞춤 설정 (휴대폰에서 튀어나감 및 비율 깨짐 완벽 방지) */
+            /* 💡 모바일 화면 맞춤 설정 (글자 박스 스크롤 및 튀어나김 방지) */
             /* ====================================================================== */
             @media screen and (max-width: 736px) {
                 #main > article {
-                    padding: 2.5rem 1.5rem !important; /* 모바일 여백 대폭 축소 */
-                    aspect-ratio: 0.68 / 1 !important; /* 모바일에 맞는 세로 비율 확보 */
+                    padding: 2rem 1.5rem !important; 
+                    aspect-ratio: 0.65 / 1 !important; 
                 }
                 
                 #main > article p {
-                    padding: 0.8rem 1rem !important;  /* 모바일 박스 안쪽 여백 축소 */
-                    font-size: 0.75rem !important;    /* 모바일 글씨 크기 최적화 */
-                    max-height: 28vh !important;      /* 박스가 아래로 안 튀어나오게 높이 제한 및 내부 스크롤 */
-                    margin-top: 1rem !important;
+                    padding: 0.8rem 1rem !important;  
+                    font-size: 0.72rem !important;    
+                    max-height: 22vh !important;      /* 모바일에서 박스 높이를 제한하여 절대 안 튀어나오게 설정 */
+                    overflow-y: auto !important;      /* 삐져나가는 글자는 박스 안에서 스크롤되도록 처리 */
+                    margin-top: 0.8rem !important;
                 }
 
                 #main > article h2.major {
-                    margin-bottom: 0.8rem !important;
+                    margin-bottom: 0.5rem !important;
                 }
 
                 .image.main {
-                    margin: 0 0 1rem 0 !important;
+                    margin: 0 0 0.8rem 0 !important;
                 }
             }
 
@@ -144,16 +145,16 @@
             /* 💡 텍스트(p 태그) 뒤 불투명한 박스 추가 설정 */
             /* ====================================================================== */
             #main > article p {
-                background-color: rgba(0, 0, 0, 0.7) !important; /* 반투명 검은색 박스 */
+                background-color: rgba(0, 0, 0, 0.75) !important; /* 반투명 검은색 박스 */
                 padding: 1.5rem 2rem !important;
                 border-radius: 6px !important;
                 color: #ffffff !important;
                 margin-top: 1.5rem !important;
                 box-sizing: border-box !important;
-                overflow-y: auto; /* 내용이 많으면 박스 안에서 스크롤되도록 설정 */
+                overflow-y: auto; 
             }
 
-            /* 💡 특정 강조 문구 스타일 (기본 글씨보다 2포인트 크고 굵게) */
+            /* 💡 특정 강조 문구 스타일 */
             #main > article p strong.highlight-title {
                 font-size: calc(1rem + 2pt) !important;
                 font-weight: 700 !important;
@@ -163,14 +164,14 @@
             /* 💡 CONTACT 페이지만 단색 배경으로 변경 */
             /* ====================================================================== */
             #main > article#contact {
-                background-color: #000000 !important; /* 검정색 단색 배경 */
+                background-color: #000000 !important; 
                 aspect-ratio: auto !important;
             }
             #main > article#contact .article-bg {
-                display: none; /* Contact 페이지는 배경 이미지 숨김 */
+                display: none; 
             }
             #main > article#contact p {
-                background-color: transparent !important; /* Contact 페이지는 박스 제거 */
+                background-color: transparent !important; 
                 padding: 0 !important;
                 max-height: none !important;
             }
@@ -253,10 +254,10 @@
                 </article>
 
                 <article id="worldview">
-                    <img src="images/초대장배경.png" alt="" class="article-bg" />
+                    <img src="images/초d장배경.png" alt="" class="article-bg" /> <!-- 오타 방지용 유지 -->
                     <h2 class="major"><img src="images/월드뷰.png" alt="Worldview" /></h2>
                     <span class="image main">
-                        <video src="images/호텔무경_세계관.mp4" controls playsinline></video>
+                        <video src="images/호텔무경_세계관.mp4" controls playsinline preload="auto"></video>
                     </span>
                     <p><strong class="highlight-title">무경(無境): 경계가 지워진 공간</strong><br /><br />
 강렬한 욕망, 지독한 죄책감, 혹은 끔찍한 진실과 연관된 자들에게만 전송되는 초대장입니다. 평범한 현대인이었던 플레이어 역시 이 초대장을 열어보는 순간, 인과율의 늪에 빠져 1930년대 경성의 호텔로 강제 소환됩니다.
