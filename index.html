@@ -1,4 +1,9 @@
 <!DOCTYPE HTML>
+<!--
+    Dimension by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
     <head>
         <title>호텔 무경</title>
@@ -8,15 +13,27 @@
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
         
         <style>
+            /* 
+            ======================================================================
+            [👇 초보자를 위한 설정창 👇]
+            ======================================================================
+            */
             :root {
+                /* --- 봉투 애니메이션 설정 --- */
                 --도장-크기: 21%;
                 --도장-가로위치: 50%;
                 --도장-세로위치: 75%;
                 --초대장-빠져나옴: -50%;
-                --팝업-가로크기: 1250px; 
-                --팝업-최대너비: 95vw; 
+
+                /* --- 💡 팝업창(내부 페이지) 설정 --- */
+                --팝업-가로크기: 1100px; 
+                --팝업-최대너비: 92vw; 
+                
+                /* --- 💡 카피라이트 설정 --- */
                 --카피라이트-글씨크기: 0.5rem;
                 --카피라이트-글씨색상: #e54343;
+
+                /* 👇 타이틀 이미지 크기 👇 */
                 --타이틀-이미지-크기: 80%; 
             }
 
@@ -26,6 +43,7 @@
                 font-family: 'Noto Serif KR', serif !important;
             }
 
+            /* 다이아몬드 대신 실링 이미지 교체 */
             #header .logo { 
                 border: none !important; 
                 background-image: url('images/봉투_실링.png'); 
@@ -37,15 +55,29 @@
             }
             #header .logo .icon { display: none !important; }
 
-            /* 팝업창 및 레이아웃 수정 */
+            /* 선 색상 변경 */
+            #header .content { border-color: #e54343 !important; }
+            #header nav ul { border-color: #e54343 !important; }
+            #header nav ul li { 
+                border-color: #e54343 !important; 
+                border-left: solid 1px #e54343 !important; 
+            }
+            #header nav ul li:first-child { border-left: none !important; }
+            #header .content:before { background-color: #e54343 !important; }
+            #header nav:before, #header nav:after { display: none !important; }
+            #header h1, #header p, #header nav ul li a { color: #e54343 !important; }
+
+            /* ====================================================================== */
+            /* 💡 팝업창 및 배경 이미지 완벽 고정 (로고 벗어남 방지) */
+            /* ====================================================================== */
             #main > article {
                 background: transparent !important;
                 width: var(--팝업-가로크기) !important;
                 max-width: var(--팝업-최대너비) !important;
-                aspect-ratio: 0.7 / 1 !important; 
+                aspect-ratio: 0.75 / 1 !important; 
                 position: relative !important;
-                overflow: hidden !important; 
-                padding: 4rem 3rem !important;
+                overflow: hidden !important; /* 컨텐츠가 밖으로 튀어나가지 않게 차단 */
+                padding: 4rem 5rem !important;
                 box-sizing: border-box !important;
                 display: flex !important;
                 flex-direction: column !important;
@@ -53,80 +85,279 @@
                 align-items: center !important;
             }
 
+            /* 배경 이미지를 팝업 내부에 완벽하게 맞춤 */
             .article-bg {
                 position: absolute;
-                top: 0; left: 0;
-                width: 100%; height: 100%;
-                object-fit: fill; 
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: fill; /* 초대장 영역 전체에 배경이 찌그러짐 없이 꽉 차도록 설정 */
                 z-index: -1;
                 pointer-events: none;
             }
 
+            /* 내부 컨텐츠가 배경 이미지 위에 정확히 위치하도록 조정 */
             #main > article > *:not(.article-bg) {
                 position: relative;
                 z-index: 1;
                 width: 100%;
             }
 
-            /* 유튜브 영상 컨테이너 */
-            .video-wrapper {
-                position: relative;
-                width: 100%;
-                padding-bottom: 56.25%; /* 16:9 비율 */
-                margin-bottom: 1rem;
-            }
-            .video-wrapper iframe {
-                position: absolute;
-                top: 0; left: 0;
-                width: 100%; height: 100%;
-                border-radius: 4px;
+            #main > article h2.major {
+                border-bottom: none !important; 
+                text-align: center !important; 
+                margin-bottom: 1rem !important;
+                width: 100% !important; 
+                padding: 0 !important;
             }
 
-            /* 텍스트 박스 */
+            #main > article h2.major img {
+                display: block;
+                margin: 0 auto !important; 
+                width: var(--타이틀-이미지-크기) !important; 
+                max-width: 100% !important; 
+                height: auto;
+            }
+
+            /* ====================================================================== */
+            /* 💡 모바일 화면 맞춤 설정 */
+            /* ====================================================================== */
+            @media screen and (max-width: 736px) {
+                #main > article {
+                    padding: 2rem 1.5rem !important; 
+                    aspect-ratio: 0.62 / 1 !important; 
+                }
+                
+                #main > article p {
+                    padding: 0.6rem 0.8rem !important;  
+                    font-size: 0.7rem !important;    
+                    max-height: 18vh !important;      
+                    overflow-y: auto !important;      
+                    margin-top: 0.5rem !important;
+                }
+            }
+
+            /* ====================================================================== */
+            /* 💡 텍스트(p 태그) 뒤 불투명한 박스 추가 설정 */
+            /* ====================================================================== */
             #main > article p {
                 background-color: rgba(0, 0, 0, 0.75) !important; 
-                padding: 1.2rem !important;
+                padding: 1.2rem 1.5rem !important;
                 border-radius: 6px !important;
                 color: #ffffff !important;
-                font-size: 0.9rem !important;
+                margin-top: 1rem !important;
+                box-sizing: border-box !important;
                 overflow-y: auto; 
-                max-height: 20vh;
             }
 
-            /* 모바일 최적화 */
-            @media screen and (max-width: 736px) {
-                #main > article { padding: 2rem 1.5rem !important; aspect-ratio: 0.55 / 1 !important; }
-                #main > article p { font-size: 0.7rem !important; max-height: 25vh !important; }
+            /* 💡 특정 강조 문구 스타일 */
+            #main > article p strong.highlight-title {
+                font-size: calc(1rem + 2pt) !important;
+                font-weight: 700 !important;
             }
 
-            #main > article#contact { background-color: #000000 !important; aspect-ratio: auto !important; }
-            #main > article#contact p { background: none !important; }
+            /* ====================================================================== */
+            /* 💡 CONTACT 페이지만 단색 배경으로 변경 */
+            /* ====================================================================== */
+            #main > article#contact {
+                background-color: #000000 !important; 
+                aspect-ratio: auto !important;
+                overflow: visible !important;
+            }
+            #main > article#contact .article-bg {
+                display: none; 
+            }
+            #main > article#contact p {
+                background-color: transparent !important; 
+                padding: 0 !important;
+                max-height: none !important;
+            }
+
+            /* ====================================================================== */
+            /* 비디오 영역 및 푸터 */
+            /* ====================================================================== */
+            .image.main { 
+                margin: 0 0 1rem 0 !important; 
+                padding: 0 !important; 
+                width: 100% !important;
+            }
+            
+            .image.main video, .image.main img { 
+                width: 100% !important; 
+                max-width: 100% !important; 
+                height: auto !important; 
+                max-height: 35vh !important; /* 모바일/PC에서 비디오가 너무 커서 초대장을 탈출하지 않게 높이 제한 */
+                object-fit: contain !important; 
+                border-radius: 4px; 
+                display: block !important; 
+            }
+
+            #footer .copyright { color: var(--카피라이트-글씨색상) !important; font-size: var(--카피라이트-글씨크기) !important; }
+            #footer .copyright a { color: var(--카피라이트-글씨색상) !important; }
 
             /* 초대장 애니메이션 */
-            #envelope-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #321111; z-index: 99999; display: flex; justify-content: center; align-items: center; transition: opacity 1.5s ease; }
-            #envelope-overlay.hidden { opacity: 0; visibility: hidden; }
-            .envelope-container { position: relative; width: 85vw; max-width: 600px; cursor: pointer; }
-            .env-letter { position: absolute; bottom: 2%; left: 5%; width: 90% !important; z-index: 2; transition: 1.5s; }
-            .envelope-container.open .env-letter { transform: translateY(-50%); }
+            #envelope-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #321111; z-index: 99999; display: flex; justify-content: center; align-items: center; transition: opacity 1.5s ease, visibility 1.5s ease; }
+            #envelope-overlay.hidden { opacity: 0; visibility: hidden; pointer-events: none;}
+            .envelope-container { position: relative; width: 85vw; max-width: 600px; cursor: pointer; perspective: 2000px; }
+            .envelope-container img { display: block; width: 100%; height: auto; }
+            .env-base { position: relative; z-index: 1; }
+            .env-letter { position: absolute; bottom: 2%; left: 5%; width: 90% !important; z-index: 2; transition: transform 1.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
+            .env-front { position: absolute; bottom: 0; left: 0; z-index: 3; pointer-events: none;}
+            .env-flap-wrapper { position: absolute; top: 0; left: 0; width: 100%; z-index: 4; transform-origin: top center; transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; pointer-events: none; }
+            .flap-front { position: relative; backface-visibility: hidden; }
+            .flap-back { position: absolute; top: 0; left: 0; backface-visibility: hidden; transform: rotateX(180deg); }
+            .env-seal { position: absolute; top: var(--도장-세로위치); left: var(--도장-가로위치); transform: translate(-50%, -50%); width: var(--도장-크기) !important; z-index: 5; transition: opacity 0.5s ease, transform 0.5s ease; pointer-events: none; }
+            .envelope-container.open .env-flap-wrapper { transform: rotateX(180deg); }
+            .envelope-container.open .env-seal { opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
+            .envelope-container.pull-out .env-letter { transform: translateY(var(--초대장-빠져나옴)); cursor: pointer;} 
+            .envelope-container.pull-out .env-flap-wrapper { z-index: 1; }
         </style>
     </head>
-    <body>
-        <!-- (이하 생략 - 오버레이 및 구조는 동일) -->
+    <body class="is-preload">
+
+        <div id="envelope-overlay">
+            <div class="envelope-container" id="envelope">
+                <img src="images/봉투_뒤.png" class="env-base" />
+                <img src="images/초대장.png" class="env-letter" id="clickable-letter"/>
+                <img src="images/봉투_앞.png" class="env-front" />
+                <div class="env-flap-wrapper" id="flap">
+                    <img src="images/봉투_뚜껑앞면.png" class="flap-front" />
+                    <img src="images/봉투_뚜껑뒷면.png" class="flap-back" />
+                </div>
+                <img src="images/봉투_실링.png" class="env-seal" />
+            </div>
+        </div>
+
         <div id="wrapper">
-            <!-- ... (헤더 생략) ... -->
+            <header id="header">
+                <div class="logo"></div>
+                <div class="content">
+                    <div class="inner">
+                        <h1>HOTEL MUGYEONG</h1>
+                        <p>귀하를 호텔 무경의 특별한 손님으로 초대합니다<br />
+                        이곳에는 시간의 경계도, 삶과 죽음의 경계도, 진실과 거짓의 경계도 존재하지 않습니다</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#trailer">TRAILER</a></li>
+                        <li><a href="#worldview">WORLDVIEW</a></li>
+                        <li><a href="#character">CHARACTER</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </header>
+
             <div id="main">
+                <article id="trailer">
+                    <img src="images/초대장배경.png" alt="" class="article-bg" />
+                    <h2 class="major"><img src="images/트레일러.png" alt="Trailer" /></h2>
+                    <span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+                    <p></p>
+                </article>
+
                 <article id="worldview">
                     <img src="images/초대장배경.png" alt="" class="article-bg" />
                     <h2 class="major"><img src="images/월드뷰.png" alt="Worldview" /></h2>
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/ISFYp_wNXnA" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <p><strong>무경(無境): 경계가 지워진 공간</strong><br /><br />
-                    강렬한 욕망, 지독한 죄책감, 혹은 끔찍한 진실과 연관된 자들에게만 전송되는 초대장입니다. 평범한 현대인이었던 플레이어 역시 이 초대장을 열어보는 순간, 인과율의 늪에 빠져 1930년대 경성의 호텔로 강제 소환됩니다.</p>
+                    <span class="image main">
+                        <video src="images/호텔무경_세계관.mp4" controls playsinline preload="auto"></video>
+                    </span>
+                    <p><strong class="highlight-title">무경(無境): 경계가 지워진 공간</strong><br /><br />
+강렬한 욕망, 지독한 죄책감, 혹은 끔찍한 진실과 연관된 자들에게만 전송되는 초대장입니다. 평범한 현대인이었던 플레이어 역시 이 초대장을 열어보는 순간, 인과율의 늪에 빠져 1930년대 경성의 호텔로 강제 소환됩니다.
+<br /><br />
+호텔의 시간은 사건의 진상을 밝혀내기 전까지 일제강점기의 어느 어두운 밤에 멈춰 있습니다. 밤이 깊어질수록 살인과 실종이 반복되며, 진실을 찾지 못하고 죽은 희생자의 영혼은 영원히 속박됩니다.</p>
                 </article>
-                <!-- ... (나머지 생략) ... -->
+
+                <article id="character">
+                    <img src="images/초대장배경.png" alt="" class="article-bg" />
+                    <h2 class="major"><img src="images/캐릭터.png" alt="Character" /></h2>
+                    <span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+                    <p></p>
+                </article>
+
+                <article id="contact">
+                    <img src="images/초대장배경.png" alt="" class="article-bg" />
+                    <h2 class="major"><img src="images/콘택트.png" alt="Contact" /></h2>
+                    <form method="post" action="#">
+                        <div class="fields">
+                            <div class="field half">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" id="name" />
+                            </div>
+                            <div class="field half">
+                                <label for="email">Email</label>
+                                <input type="text" name="email" id="email" />
+                            </div>
+                            <div class="field">
+                                <label for="message">Message</label>
+                                <textarea name="message" id="message" rows="4"></textarea>
+                            </div>
+                        </div>
+                        <ul class="actions">
+                            <li><input type="submit" value="Send Message" class="primary" /></li>
+                            <li><input type="reset" value="Reset" /></li>
+                        </ul>
+                    </form>
+                </article>
             </div>
+
+            <footer id="footer">
+                <p class="copyright">&copy; HOTEL MUGYEONG. All rights reserved.</p>
+            </footer>
         </div>
-        <!-- (스크립트 동일) -->
+
+        <div id="bg"></div>
+
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const envelope = document.getElementById('envelope');
+                const overlay = document.getElementById('envelope-overlay');
+                const clickableLetter = document.getElementById('clickable-letter');
+                
+                let isHoldingPreload = true;
+
+                const observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        if (isHoldingPreload && !document.body.classList.contains('is-preload')) {
+                            document.body.classList.add('is-preload');
+                        }
+                    });
+                });
+                observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+
+                let isLetterClickable = false;
+
+                envelope.addEventListener('click', function(e) {
+                    if(envelope.classList.contains('open')) return;
+
+                    envelope.classList.add('open'); 
+                    setTimeout(() => { envelope.classList.add('pull-out'); }, 800); 
+                    
+                    setTimeout(() => { isLetterClickable = true; }, 1500);
+                });
+
+                clickableLetter.addEventListener('click', function(e) {
+                    if(!isLetterClickable) return;
+                    e.stopPropagation(); 
+
+                    overlay.classList.add('hidden'); 
+                    
+                    setTimeout(() => {
+                        isHoldingPreload = false;
+                        document.body.classList.remove('is-preload');
+                    }, 300); 
+                    
+                    setTimeout(() => { overlay.style.display = 'none'; }, 1500);
+                });
+            });
+        </script>
+
     </body>
 </html>
