@@ -26,8 +26,8 @@
                 --초대장-빠져나옴: -50%;
 
                 /* --- 💡 팝업창(내부 페이지) 설정 --- */
-                --팝업-가로크기: 800px; 
-                --팝업-최대너비: 90vw; 
+                --팝업-가로크기: 900px; 
+                --팝업-최대너비: 94vw; 
                 
                 /* --- 💡 카피라이트 설정 --- */
                 --카피라이트-글씨크기: 0.5rem;
@@ -73,22 +73,50 @@
             #main > article {
                 background-color: transparent !important;
                 background-image: url('images/초대장배경.png') !important;
-                background-size: 100% 100% !important; 
-                background-position: center !important;
+
+                /*
+                 * 초대장 원본 비율에 맞춘 영역.
+                 * 핵심: 배경을 contain으로 축소하지 않고,
+                 * 초대장 영역 자체를 원본 비율로 충분히 세로로 확보한다.
+                 */
+                background-size: 100% 100% !important;
+                background-position: center center !important;
                 background-repeat: no-repeat !important;
-                
+
                 width: var(--팝업-가로크기) !important;
                 max-width: var(--팝업-최대너비) !important;
-                
-                padding: 6rem 6rem 6rem 6rem !important; 
+
+                /* 원본 초대장 비율에 맞춤: 약 1.067 : 1 */
+                aspect-ratio: 1.067 / 1 !important;
+
+                /*
+                 * aspect-ratio보다 content 높이가 작을 때도
+                 * 배경 전체 높이를 확보하도록 명시.
+                 * 94vw / 1.067 ≈ 88.1vw
+                 */
+                height: min(88.1vw, 843px) !important;
+                min-height: 0 !important;
+
+                /* 내용이 배경 밖으로 나가도 잘리지 않게 */
+                overflow: visible !important;
+
+                /* 영상이 충분히 커질 수 있도록 좌우 여백을 적당히 유지 */
+                padding: 6rem 6rem 6rem 6rem !important;
+                box-sizing: border-box !important;
             }
 
             /* 모바일 화면 여백 설정 */
             @media screen and (max-width: 736px) {
                 #main > article {
                     padding: 4rem 3rem 4rem 3rem !important;
+                    width: 94vw !important;
+                    max-width: 94vw !important;
+                    height: 88.1vw !important;
+                    aspect-ratio: 1.067 / 1 !important;
+                    overflow: visible !important;
                 }
             }
+
             
             #main > article h2.major {
                 border-bottom: none !important; 
@@ -118,7 +146,7 @@
             /* 비디오 영역 및 푸터 */
             /* ====================================================================== */
             .image.main { margin: 0 0 2rem 0 !important; padding: 0 !important; }
-            .image.main video { width: 100%; border-radius: 4px; display: block; }
+            .image.main video { width: 100% !important; max-width: none !important; height: auto !important; aspect-ratio: 16 / 9 !important; object-fit: contain; border-radius: 4px; display: block; }
             #footer .copyright { color: var(--카피라이트-글씨색상) !important; font-size: var(--카피라이트-글씨크기) !important; }
             #footer .copyright a { color: var(--카피라이트-글씨색상) !important; }
 
@@ -138,6 +166,59 @@
             .envelope-container.open .env-seal { opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
             .envelope-container.pull-out .env-letter { transform: translateY(var(--초대장-빠져나옴)); cursor: pointer;} 
             .envelope-container.pull-out .env-flap-wrapper { z-index: 1; }
+        
+            /* ==============================================================
+               초대장 배경 최종 수정
+               - 배경 이미지는 절대 가로/세로를 강제로 늘리지 않음
+               - 실제 배경 이미지의 비율을 유지
+               - 콘텐츠(특히 영상)가 커져도 배경 영역 안에서 같이 확장
+               ============================================================== */
+
+            #main > article {
+                position: relative !important;
+                overflow: hidden !important;
+
+                /* 배경 이미지는 원본 비율 유지 */
+                background-image: url('images/초대장배경.png') !important;
+                background-repeat: no-repeat !important;
+                background-position: center top !important;
+                background-size: cover !important;
+
+                width: var(--팝업-가로크기) !important;
+                max-width: var(--팝업-최대너비) !important;
+
+                /*
+                 * 영상이 너무 작아서 초대장이 눌려 보이지 않도록
+                 * 팝업 자체를 넉넉하게 사용.
+                 */
+                padding: 7rem 6rem 7rem 6rem !important;
+                box-sizing: border-box !important;
+                min-height: 760px !important;
+            }
+
+            #main > article .image.main {
+                width: 100% !important;
+                max-width: none !important;
+                margin: 0 0 2rem 0 !important;
+            }
+
+            /* 영상은 팝업 가로폭에 맞춰 충분히 크게 */
+            #main > article .image.main video {
+                display: block !important;
+                width: 100% !important;
+                height: auto !important;
+                max-width: none !important;
+                object-fit: contain !important;
+            }
+
+            @media screen and (max-width: 736px) {
+                #main > article {
+                    padding: 5rem 3rem 5rem 3rem !important;
+                    min-height: 0 !important;
+                    background-size: cover !important;
+                }
+            }
+
         </style>
     </head>
     <body class="is-preload">
@@ -178,21 +259,25 @@
             <div id="main">
                 <article id="trailer">
                     <h2 class="major"><img src="images/트레일러.png" alt="Trailer" /></h2>
-                    <span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+                    <span class="image main">
+                        <div class="video-container">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/fX-h8SGp0jY"
+                                title="Hotel Mugyeong Trailer"
+                                loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </span>
                     <p></p>
                 </article>
 
                 <article id="worldview">
                     <h2 class="major"><img src="images/월드뷰.png" alt="Worldview" /></h2>
                     <span class="image main">
-                        <iframe
-                            src="https://www.youtube.com/embed/fX-h8SGp0jY"
-                            title="호텔 무경 Trailer"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen
-                            style="width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 4px; display: block;">
-                        </iframe>
+                        <video src="images/호텔무경_세계관.mp4" controls playsinline></video>
                     </span>
                     <p></p>
                 </article>
