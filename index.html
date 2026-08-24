@@ -334,12 +334,13 @@
         }
 
         /* ================================================================
-           ★ 캐릭터 카드 갤러리 (새로 추가된 디자인)
+           ★ 캐릭터 카드 갤러리 (한 줄에 1개씩 나오도록 수정 완료!)
            ================================================================ */
         .character-gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            display: flex;
+            flex-direction: column; /* 세로로 한 줄씩 배치 */
+            align-items: center; /* 가운데 정렬 */
+            gap: 2.5rem; /* 카드 사이 간격을 보기 좋게 띄움 */
             margin-top: 2rem;
             width: 100%;
         }
@@ -450,12 +451,6 @@
 
             #worldview .invitation-content > p strong.highlight-title {
                 font-size: calc(var(--월드뷰-글자크기) * 0.9 + 2pt) !important;
-            }
-
-            /* 모바일 캐릭터 카드 디자인 (2열) */
-            .character-gallery {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
             }
         }
 
