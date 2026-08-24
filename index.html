@@ -1,33 +1,20 @@
 <!DOCTYPE HTML>
-
 <!--
     Dimension by HTML5 UP
     html5up.net | @ajlkn
     Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-
 <html>
-
 <head>
-
     <title>호텔 무경</title>
-
     <meta charset="utf-8" />
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, user-scalable=no"
-    />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
-
     <noscript>
         <link rel="stylesheet" href="assets/css/noscript.css" />
     </noscript>
 
-
     <style>
-
         /* ================================================================
            ================================================================
            
@@ -38,9 +25,7 @@
            ================================================================
            ================================================================ */
 
-
         :root {
-
 
             /* ============================================================
                ① 상단 제목 이미지 크기
@@ -53,12 +38,9 @@
                80% = 보통
                90% = 크게
                ============================================================ */
-
             --트레일러-크기: 68%;
             --월드뷰-크기: 68%;
             --캐릭터-크기: 68%;
-
-
 
             /* ============================================================
                ② 상단 제목 이미지 위치
@@ -67,23 +49,17 @@
                40% = 위쪽
                60% = 아래쪽
                ============================================================ */
-
             --트레일러-세로위치: 75%;
             --월드뷰-세로위치: 75%;
             --캐릭터-세로위치: 75%;
 
-
-
             /* ============================================================
                ③ 월드뷰 설명 글씨 크기
                ============================================================ */
-
             --월드뷰-글자크기: 1.3rem;
             --트레일러-글자크기: var(--월드뷰-글자크기);
             --트레일러-글자색상: var(--월드뷰-글자색상);
             --트레일러-줄간격: var(--월드뷰-줄간격);
-
-
 
             /* ============================================================
                ④ 월드뷰 설명 글씨 색상
@@ -93,192 +69,106 @@
                #e54343 = 빨간색
                #000000 = 검정색
                ============================================================ */
-
             --월드뷰-글자색상: #000000;
-
-
 
             /* ============================================================
                ⑤ 월드뷰 설명 줄 간격
                ============================================================ */
-
             --월드뷰-줄간격: 1.8;
-
-
 
             /* ============================================================
                ⑥ 봉투 애니메이션 설정
                ============================================================ */
-
             --도장-크기: 21%;
             --도장-가로위치: 50%;
             --도장-세로위치: 75%;
             --초대장-빠져나옴: -50%;
 
-
-
             /* ============================================================
                ⑦ 초대장 전체 가로 크기
                ============================================================ */
-
             --팝업-가로크기: 900px;
             --팝업-최대너비: 94vw;
-
-
 
             /* ============================================================
                ⑧ 카피라이트
                ============================================================ */
-
             --카피라이트-글씨크기: 0.5rem;
             --카피라이트-글씨색상: #e54343;
-
         }
-
-
 
         /* ================================================================
            폰트
            ================================================================ */
-
         @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;700&display=swap');
 
-
-        body,
-        input,
-        select,
-        textarea,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        p,
-        a {
-
+        body, input, select, textarea, h1, h2, h3, h4, h5, h6, p, a {
             font-family: 'Noto Serif KR', serif !important;
-
         }
-
-
 
         /* ================================================================
            HEADER
            ================================================================ */
-
         #header .logo {
-
             border: none !important;
-
             background-image: url('images/봉투_실링.png');
-
             background-size: contain;
-
             background-position: center;
-
             background-repeat: no-repeat;
-
             width: 5.5rem;
-
             height: 5.5rem;
-
         }
-
 
         #header .logo .icon {
-
             display: none !important;
-
         }
-
 
         #header .content {
-
             border-color: #e54343 !important;
-
         }
-
 
         #header nav ul {
-
             border-color: #e54343 !important;
-
         }
-
 
         #header nav ul li {
-
             border-color: #e54343 !important;
-
             border-left: solid 1px #e54343 !important;
-
         }
-
 
         #header nav ul li:first-child {
-
             border-left: none !important;
-
         }
-
 
         #header .content:before {
-
             background-color: #e54343 !important;
-
         }
-
 
         #header nav:before,
         #header nav:after {
-
             display: none !important;
-
         }
 
-
-        #header h1,
-        #header p,
-        #header nav ul li a {
-
+        #header h1, #header p, #header nav ul li a {
             color: #e54343 !important;
-
         }
-
-
 
         /* ================================================================
            초대장 전체
            ================================================================ */
-
         #main > article {
-
             width: var(--팝업-가로크기) !important;
-
             max-width: var(--팝업-최대너비) !important;
-
             height: auto !important;
-
             min-height: 0 !important;
-
             padding: 0 !important;
-
             margin: 0 auto !important;
-
             background: transparent !important;
-
             overflow: visible !important;
-
             box-sizing: border-box !important;
-
             display: flex !important;
-
             flex-direction: column !important;
-
         }
-
-
 
         /* ================================================================
            초대장 상단
@@ -288,125 +178,69 @@
            
            ★ 이미지 자체 비율을 그대로 유지
            ================================================================ */
-
         .invitation-top {
-
             position: relative;
-
             width: 100%;
-
             height: auto;
-
             flex: 0 0 auto;
-
             line-height: 0;
-
             overflow: hidden;
-
             z-index: 5;
-
         }
-
 
         .invitation-top > .top-background {
-
             display: block;
-
             width: 100%;
-
             height: auto;
-
             margin: 0;
-
             padding: 0;
-
             border: 0;
-
         }
-
-
 
         /* ================================================================
            상단 제목 이미지
            ================================================================ */
-
         .invitation-title {
-
             position: absolute;
-
             left: 50%;
-
             max-width: 90%;
-
             height: auto;
-
             margin: 0;
-
             padding: 0;
-
             z-index: 10;
-
         }
-
-
 
         /* ================================================================
            제목별 크기 / 위치
            ================================================================ */
-
         #trailer .invitation-title {
-
             width: var(--트레일러-크기);
-
             top: var(--트레일러-세로위치);
-
             transform: translate(-50%, -50%);
-
         }
-
 
         #worldview .invitation-title {
-
             width: var(--월드뷰-크기);
-
             top: var(--월드뷰-세로위치);
-
             transform: translate(-50%, -50%);
-
         }
-
 
         #character .invitation-title {
-
             width: var(--캐릭터-크기);
-
             top: var(--캐릭터-세로위치);
-
             transform: translate(-50%, -50%);
-
         }
-
-
 
         /* ================================================================
            기존 Dimension 제목 스타일 제거
            ================================================================ */
-
         #main > article h2.major {
-
             border-bottom: none !important;
-
             text-align: center !important;
-
             margin: 0 !important;
-
             width: 100% !important;
-
             padding: 0 !important;
-
         }
-
-
 
         /* ================================================================
            초대장 중단
@@ -417,49 +251,27 @@
            ★ 중단 이미지를 찌그러뜨리지 않음
            ★ 콘텐츠가 많아져도 상단/하단과 겹치지 않음
            ================================================================ */
-
         .invitation-middle {
-
             position: relative;
-
             width: 100%;
-
             min-height: 0;
-
             flex: 0 0 auto;
-
             box-sizing: border-box;
-
             background-image: url('images/초대장배경_중단.png');
-
             background-size: 100% auto;
-
             background-position: center top;
-
             background-repeat: repeat-y;
-
             background-color: transparent;
-
             z-index: 2;
-
         }
-
 
         .invitation-content {
-
             position: relative;
-
             width: 100%;
-
             box-sizing: border-box;
-
             padding: 4rem 7.5rem;
-
             z-index: 3;
-
         }
-
-
 
         /* ================================================================
            초대장 하단
@@ -469,104 +281,75 @@
            
            ★ 항상 중단 콘텐츠 아래에 배치
            ================================================================ */
-
         .invitation-bottom {
-
             position: relative;
-
             width: 100%;
-
             height: auto;
-
             flex: 0 0 auto;
-
             line-height: 0;
-
             overflow: hidden;
-
             z-index: 1;
-
         }
-
 
         .invitation-bottom > img {
-
             display: block;
-
             width: 100%;
-
             height: auto;
-
             margin: 0;
-
             padding: 0;
-
             border: 0;
-
         }
-
-
 
         /* ================================================================
            ★ 유튜브 영상
            
            정확한 16:9 비율 유지
            ================================================================ */
-
         .video-container {
-
             position: relative;
-
             display: block;
-
             width: 100%;
-
             aspect-ratio: 16 / 9;
-
             height: auto;
-
             padding: 0 !important;
-
             margin: 0 0 1rem 0 !important;
-
             overflow: hidden;
-
             border-radius: 4px;
-
             background: #000000;
-
         }
-
 
         .video-container iframe {
-
             position: absolute !important;
-
             display: block !important;
-
             top: 0 !important;
-
             left: 0 !important;
-
             width: 100% !important;
-
             height: 100% !important;
-
             min-width: 0 !important;
-
             min-height: 0 !important;
-
             margin: 0 !important;
-
             padding: 0 !important;
-
             border: 0 !important;
-
             border-radius: 4px !important;
-
         }
 
+        /* ================================================================
+           ★ 캐릭터 카드 갤러리 (새로 추가된 디자인)
+           ================================================================ */
+        .character-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+            width: 100%;
+        }
 
+        .character-gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px; /* 카드의 둥근 테두리를 원치 않으면 삭제하세요 */
+        }
 
         /* ================================================================
            WORLDVIEW 설명 글
@@ -574,7 +357,6 @@
            ★ 검정 배경 없음
            ★ 글자가 많아져도 잘리지 않음
            ================================================================ */
-
 
         /* TRAILER 설명 글씨 — WORLDVIEW와 동일 */
         #trailer .invitation-content > p {
@@ -594,585 +376,272 @@
         }
 
         #worldview .invitation-content > p {
-
             background: transparent !important;
-
             background-color: transparent !important;
-
             color: var(--월드뷰-글자색상) !important;
-
             font-size: var(--월드뷰-글자크기) !important;
-
             line-height: var(--월드뷰-줄간격) !important;
-
             padding: 0 !important;
-
             margin: 0 !important;
-
             border: none !important;
-
             border-radius: 0 !important;
-
             box-shadow: none !important;
-
             max-height: none !important;
-
             height: auto !important;
-
             overflow: visible !important;
-
         }
-
 
         #worldview .invitation-content > p strong.highlight-title {
-
             color: var(--월드뷰-글자색상) !important;
-
-            font-size: calc(
-                var(--월드뷰-글자크기) + 2pt
-            ) !important;
-
+            font-size: calc(var(--월드뷰-글자크기) + 2pt) !important;
             font-weight: 700 !important;
-
         }
-
-
 
         /* ================================================================
            일반 글자
            ================================================================ */
-
         #main > article p {
-
             box-sizing: border-box !important;
-
             max-height: none !important;
-
             height: auto !important;
-
             overflow: visible !important;
-
         }
-
-
 
         /* ================================================================
            FOOTER
            ================================================================ */
-
         #footer .copyright {
-
             color: var(--카피라이트-글씨색상) !important;
-
             font-size: var(--카피라이트-글씨크기) !important;
-
         }
-
 
         #footer .copyright a {
-
             color: var(--카피라이트-글씨색상) !important;
-
         }
-
-
 
         /* ================================================================
            모바일
            ================================================================ */
-
         @media screen and (max-width: 736px) {
-
-
             #main > article {
-
                 width: 94vw !important;
-
                 max-width: 94vw !important;
-
                 height: auto !important;
-
                 min-height: 0 !important;
-
                 padding: 0 !important;
-
                 overflow: visible !important;
-
             }
-
 
             .invitation-content {
-
                 padding: 3.5rem 4rem;
-
             }
-
 
             .invitation-title {
-
                 max-width: 85%;
-
             }
-
-
 
             #trailer .invitation-content > p {
                 font-size: calc(var(--트레일러-글자크기) * 0.9) !important;
             }
 
             #worldview .invitation-content > p {
-
-                font-size: calc(
-                    var(--월드뷰-글자크기) * 0.9
-                ) !important;
-
+                font-size: calc(var(--월드뷰-글자크기) * 0.9) !important;
             }
-
 
             #worldview .invitation-content > p strong.highlight-title {
-
-                font-size: calc(
-                    var(--월드뷰-글자크기) * 0.9 + 2pt
-                ) !important;
-
+                font-size: calc(var(--월드뷰-글자크기) * 0.9 + 2pt) !important;
             }
 
+            /* 모바일 캐릭터 카드 디자인 (2열) */
+            .character-gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
         }
-
-
 
         /* ================================================================
            봉투 애니메이션
            ================================================================ */
-
         #envelope-overlay {
-
             position: fixed;
-
             top: 0;
-
             left: 0;
-
             width: 100vw;
-
             height: 100vh;
-
             background-color: #321111;
-
             z-index: 99999;
-
             display: flex;
-
             justify-content: center;
-
             align-items: center;
-
-            transition:
-                opacity 1.5s ease,
-                visibility 1.5s ease;
-
+            transition: opacity 1.5s ease, visibility 1.5s ease;
         }
-
 
         #envelope-overlay.hidden {
-
             opacity: 0;
-
             visibility: hidden;
-
             pointer-events: none;
-
         }
-
 
         .envelope-container {
-
             position: relative;
-
             width: 85vw;
-
             max-width: 600px;
-
             cursor: pointer;
-
             perspective: 2000px;
-
         }
-
 
         .envelope-container img {
-
             display: block;
-
             width: 100%;
-
             height: auto;
-
         }
-
 
         .env-base {
-
             position: relative;
-
             z-index: 1;
-
         }
-
 
         .env-letter {
-
             position: absolute;
-
             bottom: 2%;
-
             left: 5%;
-
             width: 90% !important;
-
             z-index: 2;
-
-            transition:
-                transform 1.5s cubic-bezier(
-                    0.2,
-                    0.8,
-                    0.2,
-                    1
-                );
-
+            transition: transform 1.5s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
-
 
         .env-front {
-
             position: absolute;
-
             bottom: 0;
-
             left: 0;
-
             z-index: 3;
-
             pointer-events: none;
-
         }
-
 
         .env-flap-wrapper {
-
             position: absolute;
-
             top: 0;
-
             left: 0;
-
             width: 100%;
-
             z-index: 4;
-
             transform-origin: top center;
-
-            transition:
-                transform 1.2s cubic-bezier(
-                    0.4,
-                    0,
-                    0.2,
-                    1
-                );
-
+            transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
             transform-style: preserve-3d;
-
             pointer-events: none;
-
         }
-
 
         .flap-front {
-
             position: relative;
-
             backface-visibility: hidden;
-
         }
-
 
         .flap-back {
-
             position: absolute;
-
             top: 0;
-
             left: 0;
-
             backface-visibility: hidden;
-
             transform: rotateX(180deg);
-
         }
-
 
         .env-seal {
-
             position: absolute;
-
             top: var(--도장-세로위치);
-
             left: var(--도장-가로위치);
-
             transform: translate(-50%, -50%);
-
             width: var(--도장-크기) !important;
-
             z-index: 5;
-
-            transition:
-                opacity 0.5s ease,
-                transform 0.5s ease;
-
+            transition: opacity 0.5s ease, transform 0.5s ease;
             pointer-events: none;
-
         }
-
 
         .envelope-container.open .env-flap-wrapper {
-
             transform: rotateX(180deg);
-
         }
-
 
         .envelope-container.open .env-seal {
-
             opacity: 0;
-
-            transform:
-                translate(-50%, -50%)
-                scale(1.5);
-
+            transform: translate(-50%, -50%) scale(1.5);
         }
-
 
         .envelope-container.pull-out .env-letter {
-
-            transform:
-                translateY(var(--초대장-빠져나옴));
-
+            transform: translateY(var(--초대장-빠져나옴));
             cursor: pointer;
-
         }
-
 
         .envelope-container.pull-out .env-flap-wrapper {
-
             z-index: 1;
-
         }
-
     </style>
-
 </head>
 
-
 <body class="is-preload">
-
 
     <!-- ================================================================
          봉투 오프닝
          ================================================================ -->
-
     <div id="envelope-overlay">
-
-        <div
-            class="envelope-container"
-            id="envelope"
-        >
-
-            <img
-                src="images/봉투_뒤.png"
-                class="env-base"
-                alt=""
-            />
-
-
-            <img
-                src="images/초대장.png"
-                class="env-letter"
-                id="clickable-letter"
-                alt=""
-            />
-
-
-            <img
-                src="images/봉투_앞.png"
-                class="env-front"
-                alt=""
-            />
-
-
-            <div
-                class="env-flap-wrapper"
-                id="flap"
-            >
-
-                <img
-                    src="images/봉투_뚜껑앞면.png"
-                    class="flap-front"
-                    alt=""
-                />
-
-
-                <img
-                    src="images/봉투_뚜껑뒷면.png"
-                    class="flap-back"
-                    alt=""
-                />
-
+        <div class="envelope-container" id="envelope">
+            <img src="images/봉투_뒤.png" class="env-base" alt="" />
+            <img src="images/초대장.png" class="env-letter" id="clickable-letter" alt="" />
+            <img src="images/봉투_앞.png" class="env-front" alt="" />
+            <div class="env-flap-wrapper" id="flap">
+                <img src="images/봉투_뚜껑앞면.png" class="flap-front" alt="" />
+                <img src="images/봉투_뚜껑뒷면.png" class="flap-back" alt="" />
             </div>
-
-
-            <img
-                src="images/봉투_실링.png"
-                class="env-seal"
-                alt=""
-            />
-
+            <img src="images/봉투_실링.png" class="env-seal" alt="" />
         </div>
-
     </div>
-
-
 
     <!-- ================================================================
          홈페이지
          ================================================================ -->
-
     <div id="wrapper">
-
 
         <!-- ============================================================
              HEADER
              ============================================================ -->
-
         <header id="header">
-
-
             <div class="logo"></div>
-
-
             <div class="content">
-
                 <div class="inner">
-
                     <h1>HOTEL MUGYEONG</h1>
-
-
                     <p>
-
-                        귀하를 호텔 무경의 특별한 손님으로 초대합니다
-                        <br />
-
-                        이곳에는 시간의 경계도,
-                        삶과 죽음의 경계도,
-                        진실과 거짓의 경계도 존재하지 않습니다
-
+                        귀하를 호텔 무경의 특별한 손님으로 초대합니다<br />
+                        이곳에는 시간의 경계도, 삶과 죽음의 경계도, 진실과 거짓의 경계도 존재하지 않습니다
                     </p>
-
                 </div>
-
             </div>
 
-
             <!-- ========================================================
-                 ★ CONTACT 삭제
-                 
-                 TRAILER / WORLDVIEW / CHARACTER만 남김
+                 TRAILER / WORLDVIEW / CHARACTER
                  ======================================================== -->
-
             <nav>
-
                 <ul>
-
-                    <li>
-
-                        <a href="#trailer">
-                            TRAILER
-                        </a>
-
-                    </li>
-
-
-                    <li>
-
-                        <a href="#worldview">
-                            WORLDVIEW
-                        </a>
-
-                    </li>
-
-
-                    <li>
-
-                        <a href="#character">
-                            CHARACTER
-                        </a>
-
-                    </li>
-
+                    <li><a href="#trailer">TRAILER</a></li>
+                    <li><a href="#worldview">WORLDVIEW</a></li>
+                    <li><a href="#character">CHARACTER</a></li>
                 </ul>
-
             </nav>
-
         </header>
-
-
 
         <!-- ============================================================
              MAIN
              ============================================================ -->
-
         <div id="main">
-
 
             <!-- ========================================================
                  TRAILER
                  ======================================================== -->
-
             <article id="trailer">
-
-
                 <!-- 상단 -->
-
                 <div class="invitation-top">
-
-
-                    <img
-                        src="images/초대장배경_상단.png"
-                        class="top-background"
-                        alt=""
-                    />
-
-
-                    <img
-                        src="images/트레일러.png"
-                        class="invitation-title"
-                        alt="Trailer"
-                    />
-
+                    <img src="images/초대장배경_상단.png" class="top-background" alt="" />
+                    <img src="images/트레일러.png" class="invitation-title" alt="Trailer" />
                 </div>
-
-
-
                 <!-- 중단 -->
-
                 <div class="invitation-middle">
-
-
                     <div class="invitation-content">
-
-
                         <div class="video-container">
-
-
                             <iframe
                                 src="https://www.youtube-nocookie.com/embed/fX-h8SGp0jY"
                                 title="Hotel Mugyeong Trailer"
@@ -1181,105 +650,38 @@
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen>
                             </iframe>
-
-
                         </div>
-<p>
-
-
+                        <p>
                             <br />
-                            
-
-
-                
-                            
-
-
                             호텔 무경(無境)은 경성시대를 배경으로 하며, 눈에 보이는 것만 믿을 수 없는 공간입니다. 초대장을 받은 이들만 방문할 수 있는 곳으로, 초대장은 특정한 배경을 가진 사람들에게 전송됩니다.
-                            <br />
-                            <br />
+                            <br /><br />
                             저마다 과거를 지닌 인물들이 모여든 곳에, 당신(플레이어)도 초대장을 통해 방문합니다. 인과율의 늪에 빠져 현대에서 과거 1930년대로 강제 소환됩니다.
-
-
-                            <br />
-                            <br />
-                    
-
-
+                            <br /><br />
                             끔찍한 사건이 지속되는 곳에서 당신이 벗어날 수 있는 방법은 단 하나, 호텔 무경의 비밀을 파헤치는 것입니다.
-                            <br />
-                            <br />
+                            <br /><br />
                             누구도 믿어선 안되며 영혼이 속박되기 전에 사건의 실마리를 쫓고 문제를 해결하십시오.
-
-
                         </p>
-
                     </div>
-
-
                 </div>
-
-
-
                 <!-- 하단 -->
-
                 <div class="invitation-bottom">
-
-
-                    <img
-                        src="images/초대장배경_하단.png"
-                        alt=""
-                    />
-
-
+                    <img src="images/초대장배경_하단.png" alt="" />
                 </div>
-
-
             </article>
-
-
 
             <!-- ========================================================
                  WORLDVIEW
                  ======================================================== -->
-
             <article id="worldview">
-
-
                 <!-- 상단 -->
-
                 <div class="invitation-top">
-
-
-                    <img
-                        src="images/초대장배경_상단.png"
-                        class="top-background"
-                        alt=""
-                    />
-
-
-                    <img
-                        src="images/월드뷰.png"
-                        class="invitation-title"
-                        alt="Worldview"
-                    />
-
-
+                    <img src="images/초대장배경_상단.png" class="top-background" alt="" />
+                    <img src="images/월드뷰.png" class="invitation-title" alt="Worldview" />
                 </div>
-
-
-
                 <!-- 중단 -->
-
                 <div class="invitation-middle">
-
-
                     <div class="invitation-content">
-
-
                         <div class="video-container">
-
-
                             <iframe
                                 src="https://www.youtube-nocookie.com/embed/ISFYp_wNXnA"
                                 title="Hotel Mugyeong Worldview"
@@ -1288,126 +690,41 @@
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen>
                             </iframe>
-
-
                         </div>
-
-
-
-                        <!-- =================================================
-                             ★ 월드뷰 설명
-                             
-                             검정 배경 없음
-                             크기/색상/줄간격은 위 설정창에서 조절
-                             ================================================= -->
-
+                        <!-- 월드뷰 설명 -->
                         <p>
-
-
                             <br />
-                            <strong class="highlight-title">
-
-                                무경(無境): 경계가 지워진 공간
-
-                            </strong>
-
-
-                            <br />
-                            <br />
-
-
-                            강렬한 욕망, 지독한 죄책감, 혹은 끔찍한 진실과
-                            연관된 자들에게만 전송되는 초대장입니다.
-                            <br />
-                            <br />
-                            평범한 현대인이었던 플레이어 역시 이 초대장을
-                            열어보는 순간, 인과율의 늪에 빠져 1930년대 경성의
-                            호텔로 강제 소환됩니다.
-
-
-                            <br />
-                            <br />
-                    
-
-
-                            호텔의 시간은 사건의 진상을 밝혀내기 전까지
-                            일제강점기의 어느 어두운 밤에 멈춰 있습니다.
-                            <br />
-                            <br />
-                            밤이 깊어질수록 살인과 실종이 반복되며,
-                            진실을 찾지 못하고 죽은 희생자의 영혼은
-                            영원히 속박됩니다.
-
-
+                            <strong class="highlight-title">무경(無境): 경계가 지워진 공간</strong>
+                            <br /><br />
+                            강렬한 욕망, 지독한 죄책감, 혹은 끔찍한 진실과 연관된 자들에게만 전송되는 초대장입니다.
+                            <br /><br />
+                            평범한 현대인이었던 플레이어 역시 이 초대장을 열어보는 순간, 인과율의 늪에 빠져 1930년대 경성의 호텔로 강제 소환됩니다.
+                            <br /><br />
+                            호텔의 시간은 사건의 진상을 밝혀내기 전까지 일제강점기의 어느 어두운 밤에 멈춰 있습니다.
+                            <br /><br />
+                            밤이 깊어질수록 살인과 실종이 반복되며, 진실을 찾지 못하고 죽은 희생자의 영혼은 영원히 속박됩니다.
                         </p>
-
-
                     </div>
-
-
                 </div>
-
-
-
                 <!-- 하단 -->
-
                 <div class="invitation-bottom">
-
-
-                    <img
-                        src="images/초대장배경_하단.png"
-                        alt=""
-                    />
-
-
+                    <img src="images/초대장배경_하단.png" alt="" />
                 </div>
-
-
             </article>
 
-
-
             <!-- ========================================================
-                 CHARACTER
+                 CHARACTER (이미지 추가됨)
                  ======================================================== -->
-
             <article id="character">
-
-
                 <!-- 상단 -->
-
                 <div class="invitation-top">
-
-
-                    <img
-                        src="images/초대장배경_상단.png"
-                        class="top-background"
-                        alt=""
-                    />
-
-
-                    <img
-                        src="images/캐릭터.png"
-                        class="invitation-title"
-                        alt="Character"
-                    />
-
-
+                    <img src="images/초대장배경_상단.png" class="top-background" alt="" />
+                    <img src="images/캐릭터.png" class="invitation-title" alt="Character" />
                 </div>
-
-
-
                 <!-- 중단 -->
-
                 <div class="invitation-middle">
-
-
                     <div class="invitation-content">
-
-
                         <div class="video-container">
-
-
                             <iframe
                                 src="https://www.youtube-nocookie.com/embed/ISFYp_wNXnA"
                                 title="Hotel Mugyeong Character"
@@ -1416,383 +733,123 @@
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen>
                             </iframe>
-
-
                         </div>
-
-
+                        
+                        <!-- ★ 캐릭터 카드 갤러리 영역 -->
+                        <div class="character-gallery">
+                            <img src="images/카드 디자인-지배인(최종).png" alt="지배인" />
+                            <img src="images/카드 디자인-박정숙(최종).png" alt="박정숙" />
+                            <img src="images/카드 디자인-서유리(최종).png" alt="서유리" />
+                            <img src="images/카드 디자인-이도현(최종).png" alt="이도현" />
+                            <img src="images/카드 디자인-임옥분(최종).png" alt="임옥분" />
+                            <img src="images/카드 디자인-최병수(최종).png" alt="최병수" />
+                        </div>
+                        
                     </div>
-
-
                 </div>
-
-
-
                 <!-- 하단 -->
-
                 <div class="invitation-bottom">
-
-
-                    <img
-                        src="images/초대장배경_하단.png"
-                        alt=""
-                    />
-
-
+                    <img src="images/초대장배경_하단.png" alt="" />
                 </div>
-
-
             </article>
 
-
         </div>
-
-
 
         <!-- ============================================================
              FOOTER
              ============================================================ -->
-
         <footer id="footer">
-
-
             <p class="copyright">
-
-                &copy; HOTEL MUGYEONG.
-                All rights reserved.
-
+                &copy; HOTEL MUGYEONG. All rights reserved.
             </p>
-
-
         </footer>
-
-
     </div>
-
-
-
     <div id="bg"></div>
-
-
 
     <!-- ================================================================
          기존 Dimension JS
          ================================================================ -->
-
     <script src="assets/js/jquery.min.js"></script>
-
     <script src="assets/js/browser.min.js"></script>
-
     <script src="assets/js/breakpoints.min.js"></script>
-
     <script src="assets/js/util.js"></script>
-
     <script src="assets/js/main.js"></script>
-
-
 
     <!-- ================================================================
          봉투 애니메이션 + 카테고리 위치 보정
          ================================================================ -->
-
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const envelope = document.getElementById('envelope');
+            const overlay = document.getElementById('envelope-overlay');
+            const clickableLetter = document.getElementById('clickable-letter');
+            let isHoldingPreload = true;
 
-        document.addEventListener(
-            'DOMContentLoaded',
-            function() {
-
-
-                const envelope =
-                    document.getElementById('envelope');
-
-
-                const overlay =
-                    document.getElementById('envelope-overlay');
-
-
-                const clickableLetter =
-                    document.getElementById('clickable-letter');
-
-
-                let isHoldingPreload = true;
-
-
-
-                /* ========================================================
-                   Dimension preload 방지
-                   ======================================================== */
-
-                const observer =
-                    new MutationObserver(
-                        function(mutations) {
-
-
-                            mutations.forEach(
-                                function() {
-
-
-                                    if (
-                                        isHoldingPreload &&
-                                        !document.body.classList.contains(
-                                            'is-preload'
-                                        )
-                                    ) {
-
-
-                                        document.body.classList.add(
-                                            'is-preload'
-                                        );
-
-
-                                    }
-
-
-                                }
-                            );
-
-
-                        }
-                    );
-
-
-                observer.observe(
-                    document.body,
-                    {
-                        attributes: true,
-                        attributeFilter: ['class']
+            /* Dimension preload 방지 */
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function() {
+                    if (isHoldingPreload && !document.body.classList.contains('is-preload')) {
+                        document.body.classList.add('is-preload');
                     }
-                );
-
-
-
-                let isLetterClickable = false;
-
-
-
-                /* ========================================================
-                   봉투 열기
-                   ======================================================== */
-
-                envelope.addEventListener(
-                    'click',
-                    function() {
-
-
-                        if (
-                            envelope.classList.contains('open')
-                        ) {
-
-                            return;
-
-                        }
-
-
-                        envelope.classList.add('open');
-
-
-                        setTimeout(
-                            function() {
-
-                                envelope.classList.add('pull-out');
-
-                            },
-                            800
-                        );
-
-
-                        setTimeout(
-                            function() {
-
-                                isLetterClickable = true;
-
-                            },
-                            1500
-                        );
-
-
-                    }
-                );
-
-
-
-                /* ========================================================
-                   초대장 클릭
-                   ======================================================== */
-
-                clickableLetter.addEventListener(
-                    'click',
-                    function(e) {
-
-
-                        if (!isLetterClickable) {
-
-                            return;
-
-                        }
-
-
-                        e.stopPropagation();
-
-
-                        overlay.classList.add('hidden');
-
-
-                        setTimeout(
-                            function() {
-
-
-                                isHoldingPreload = false;
-
-
-                                document.body.classList.remove(
-                                    'is-preload'
-                                );
-
-
-                            },
-                            300
-                        );
-
-
-                        setTimeout(
-                            function() {
-
-
-                                overlay.style.display = 'none';
-
-
-                            },
-                            1500
-                        );
-
-
-                    }
-                );
-
-
-
-                /* ========================================================
-                   카테고리 클릭 시
-                   
-                   해당 초대장의 상단부터 바로 보이게 함
-                   
-                   CONTACT 관련 코드는 완전히 제거됨.
-                   ======================================================== */
-
-                const categoryLinks =
-                    document.querySelectorAll(
-                        '#header nav a[href^="#"]'
-                    );
-
-
-                categoryLinks.forEach(
-                    function(link) {
-
-
-                        link.addEventListener(
-                            'click',
-                            function() {
-
-
-                                const targetId =
-                                    link.getAttribute('href');
-
-
-                                if (
-                                    !targetId ||
-                                    targetId === '#'
-                                ) {
-
-                                    return;
-
-                                }
-
-
-                                const target =
-                                    document.querySelector(
-                                        targetId
-                                    );
-
-
-                                if (!target) {
-
-                                    return;
-
-                                }
-
-
-                                /*
-                                 * Dimension 기본 이동보다
-                                 * 조금 늦게 다시 해당 article의
-                                 * 최상단으로 맞춰 줌.
-                                 */
-
-                                setTimeout(
-                                    function() {
-
-
-                                        const rect =
-                                            target.getBoundingClientRect();
-
-
-                                        const targetTop =
-                                            rect.top +
-                                            window.pageYOffset;
-
-
-                                        window.scrollTo(
-                                            {
-                                                top: targetTop,
-                                                behavior: 'smooth'
-                                            }
-                                        );
-
-
-                                    },
-                                    600
-                                );
-
-
-                                setTimeout(
-                                    function() {
-
-
-                                        const rect =
-                                            target.getBoundingClientRect();
-
-
-                                        const targetTop =
-                                            rect.top +
-                                            window.pageYOffset;
-
-
-                                        window.scrollTo(
-                                            {
-                                                top: targetTop,
-                                                behavior: 'smooth'
-                                            }
-                                        );
-
-
-                                    },
-                                    1100
-                                );
-
-
-                            }
-                        );
-
-
-                    }
-                );
-
-
-            }
-        );
-
+                });
+            });
+
+            observer.observe(document.body, {
+                attributes: true,
+                attributeFilter: ['class']
+            });
+
+            let isLetterClickable = false;
+
+            /* 봉투 열기 */
+            envelope.addEventListener('click', function() {
+                if (envelope.classList.contains('open')) return;
+                envelope.classList.add('open');
+                setTimeout(function() {
+                    envelope.classList.add('pull-out');
+                }, 800);
+                setTimeout(function() {
+                    isLetterClickable = true;
+                }, 1500);
+            });
+
+            /* 초대장 클릭 */
+            clickableLetter.addEventListener('click', function(e) {
+                if (!isLetterClickable) return;
+                e.stopPropagation();
+                overlay.classList.add('hidden');
+                setTimeout(function() {
+                    isHoldingPreload = false;
+                    document.body.classList.remove('is-preload');
+                }, 300);
+                setTimeout(function() {
+                    overlay.style.display = 'none';
+                }, 1500);
+            });
+
+            /* 카테고리 클릭 시 위치 보정 */
+            const categoryLinks = document.querySelectorAll('#header nav a[href^="#"]');
+            categoryLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    const targetId = link.getAttribute('href');
+                    if (!targetId || targetId === '#') return;
+                    const target = document.querySelector(targetId);
+                    if (!target) return;
+
+                    setTimeout(function() {
+                        const rect = target.getBoundingClientRect();
+                        const targetTop = rect.top + window.pageYOffset;
+                        window.scrollTo({ top: targetTop, behavior: 'smooth' });
+                    }, 600);
+
+                    setTimeout(function() {
+                        const rect = target.getBoundingClientRect();
+                        const targetTop = rect.top + window.pageYOffset;
+                        window.scrollTo({ top: targetTop, behavior: 'smooth' });
+                    }, 1100);
+                });
+            });
+        });
     </script>
-
-
 </body>
-
 </html>
