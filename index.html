@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
 <!--
-    Dimension by HTML5 UP
-    html5up.net | @ajlkn
-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+   Dimension by HTML5 UP
+   html5up.net | @ajlkn
+   Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
 <head>
@@ -334,12 +334,13 @@
         }
 
         /* ================================================================
-           ★ 캐릭터 카드 갤러리
+           ★ 캐릭터 카드 갤러리 (새로 추가된 디자인)
            ================================================================ */
         .character-gallery {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
+            margin-top: 2rem;
             width: 100%;
         }
 
@@ -347,6 +348,7 @@
             width: 100%;
             height: auto;
             display: block;
+            border-radius: 8px; /* 카드의 둥근 테두리를 원치 않으면 삭제하세요 */
         }
 
         /* ================================================================
@@ -450,6 +452,7 @@
                 font-size: calc(var(--월드뷰-글자크기) * 0.9 + 2pt) !important;
             }
 
+            /* 모바일 캐릭터 카드 디자인 (2열) */
             .character-gallery {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 1rem;
@@ -710,7 +713,7 @@
             </article>
 
             <!-- ========================================================
-                 CHARACTER (영상 제거 및 지정된 파일 순서 배치)
+                 CHARACTER (이미지 추가됨)
                  ======================================================== -->
             <article id="character">
                 <!-- 상단 -->
@@ -721,14 +724,17 @@
                 <!-- 중단 -->
                 <div class="invitation-middle">
                     <div class="invitation-content">
+                        
+                        <!-- ★ 캐릭터 카드 갤러리 영역 -->
                         <div class="character-gallery">
-                            <img src="images/카드 디자인-박정숙(최종).png" alt="카드 디자인-박정숙(최종)" />
-                            <img src="images/카드 디자인-서유리(최종).png" alt="카드 디자인-서유리(최종)" />
-                            <img src="images/카드 디자인-이도현(최종).png" alt="카드 디자인-이도현(최종)" />
-                            <img src="images/카드 디자인-임옥분(최종).png" alt="카드 디자인-임옥분(최종)" />
-                            <img src="images/카드 디자인-지배인(최종).png" alt="카드 디자인-지배인(최종)" />
-                            <img src="images/카드 디자인-최병수(최종).png" alt="카드 디자인-최병수(최종)" />
+                            <img src="images/카드 디자인-지배인(최종).png" alt="지배인" />
+                            <img src="images/카드 디자인-박정숙(최종).png" alt="박정숙" />
+                            <img src="images/카드 디자인-서유리(최종).png" alt="서유리" />
+                            <img src="images/카드 디자인-이도현(최종).png" alt="이도현" />
+                            <img src="images/카드 디자인-임옥분(최종).png" alt="임옥분" />
+                            <img src="images/카드 디자인-최병수(최종).png" alt="최병수" />
                         </div>
+                        
                     </div>
                 </div>
                 <!-- 하단 -->
